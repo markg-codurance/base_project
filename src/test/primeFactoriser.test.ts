@@ -6,16 +6,18 @@ import {primeFactoriser} from "../main/primeFactoriser";
 
 describe('When finding prime factors', () => {
 
-    it("should return an empty list for 1", () => {
-        expect(primeFactoriser(1)).toEqual([]);
-    } );
-
-    it ("should return 2 for 2", () => {
-        expect(primeFactoriser(2)).toEqual([2]);
-    });
-
-    it ("should return 3 for 3", () => {
-        expect(primeFactoriser(3)).toEqual([3]);
+    it.each([
+        [[], 1],
+        [[2], 2],
+        [[3], 3],
+        [[2, 2], 4],
+        [[5], 5],
+        [[2, 3], 6],
+        [[7], 7],
+        [[2, 2, 2], 8],
+        [[3, 3], 9]
+    ])("should return %s for %s", (expected: number[], given: number) => {
+        expect(primeFactoriser(given)).toEqual(expected);
     });
 
 });
