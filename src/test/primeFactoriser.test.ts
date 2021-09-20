@@ -15,7 +15,8 @@ describe('When finding prime factors', () => {
         [[2, 3], 6],
         [[7], 7],
         [[2, 2, 2], 8],
-        [[3, 3], 9]
+        [[3, 3], 9],
+        [[5,5], 25]
     ])("should return %s for %s", (expected: number[], given: number) => {
         expect(primeFactoriser(given)).toEqual(expected);
     });

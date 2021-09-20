@@ -1,15 +1,20 @@
-
 export function primeFactoriser(input: number) : number[] {
+
     let result: number[] = [];
 
-    if (input > 1) {
-        while (input % 2 === 0) {
-            result.push(2);
-            input /= 2;
+    let divisor = 2;
+    
+    while (input > 1) {
+
+        while (input % divisor === 0) {
+            result.push(divisor);
+            input /= divisor;
         }
 
-        if (input > 1) result.push(input);
+        divisor++;
+
     }
 
     return result;
+
 }
